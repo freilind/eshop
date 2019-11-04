@@ -1,0 +1,18 @@
+
+<div class="container">
+        <div class="row">
+          <div class="col col-md-6">
+            <img class="item" src="{{product.fullImage}}" alt="">
+          </div>
+          <div class="col col-md-6">
+                <p><span *ngIf="product.attributes">{{product.attributes[0].value}}</span></p>
+                <br>
+                <p><span>{{product.name}}</span></p>
+                <br>
+                <p><span>sku: {{product.partNumber}}</span></p>
+          </div>
+          
+        </div>
+      </div>
+
+

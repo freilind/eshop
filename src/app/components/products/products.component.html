@@ -1,0 +1,23 @@
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+
+    <mat-card *ngFor="let product of products" fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%" class="products-card">
+        <a (click)=goProduct(product.partNumber)>
+        <mat-card-header>
+            <span class="badge1"
+                *ngIf="product.prices.discountPercentage > 0">-{{product.prices.discountPercentage}}%</span>
+            <mat-card-title>{{product.attributes[0].value}}</mat-card-title>
+            <mat-card-subtitle>{{product.name}}</mat-card-subtitle>
+
+        </mat-card-header>
+        <img mat-card-image src="{{product.fullImage}}">
+
+        <mat-card-actions>
+            <p style="font-size:12px" *ngIf="product.prices.formattedListPrice != product.prices.formattedOfferPrice ">
+                Normal: {{product.prices.formattedListPrice}}</p>
+            <p style="color: #e75353;font-size:12px"> Internet: {{product.prices.formattedOfferPrice}} </p>
+        </mat-card-actions>
+    </a>
+    </mat-card>
+
+</div>
